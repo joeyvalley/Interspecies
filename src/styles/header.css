@@ -1,0 +1,106 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  padding: 0.5rem 0 0.75rem;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 0rem 1rem 0.25rem 1rem;
+}
+
+.header-title {
+  font-family: "Monument Grotesk";
+  font-weight: normal;
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+}
+
+.header-dates {
+  font-family: "Monument Grotesk";
+  font-style: italic;
+  font-size: 1rem;
+  color: black;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  padding: 0rem 1rem 0 0.5rem;
+  border-bottom: 1px solid black;
+}
+
+.menu-section {
+  font-family: "Monument Grotesk";
+  font-weight: normal;
+  font-size: 1rem;
+  color: black;
+  padding: 0.25rem 0.5rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.menu-section:last-child {
+  margin-right: 0;
+}
+
+.menu-section:hover {
+  color: white;
+  background: black;
+}
+
+.menu-section.active {
+  color: white;
+  background: black;
+}
+
+.header-submenu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  padding: 0rem 1rem 0 0.5rem;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  border-bottom: 0px solid black;
+  transition: all 0.5s;
+}
+
+.header-submenu.active {
+  height: 30px;
+  opacity: 1;
+  border-bottom: 1px solid black;
+}
+
+.submenu-section {
+  font-family: "Monument Grotesk";
+  font-weight: normal;
+  font-size: 1rem;
+  color: black;
+  padding: 0.25rem 0.5rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.submenu-section:last-child {
+  margin-right: 0;
+}
+
+.submenu-section:hover {
+  color: white;
+  background: green;
+}
+
+.submenu-section.active {
+  color: white;
+  background: green;
+}

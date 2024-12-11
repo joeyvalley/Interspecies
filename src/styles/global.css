@@ -1,0 +1,43 @@
+:root {
+  --red: #FF0000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: "Monument Grotesk";
+  src: url("../../public/fonts/ABCMonumentGrotesk-Regular-Trial.woff");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Monument Grotesk";
+  src: url("../../public/fonts/ABCMonumentGrotesk-Bold-Trial.woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Monument Grotesk";
+  src: url("../../public/fonts/ABCMonumentGrotesk-RegularItalic-Trial.woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+.container {
+  position: relative;
+  width: 100dvw;
+  height: 100dvh;
+  padding: 1rem;
+}
