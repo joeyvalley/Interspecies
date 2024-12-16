@@ -1,9 +1,9 @@
 import { useState } from "react";
-
+import { Link, useLocation } from "react-router-dom";
 import '../styles/header.css';
 
 
-export default function Header() {
+export default function Header({ setLooping }) {
 
   const [selectedItem, setSelectedItem] = useState(null)
   const [selectedSubMenu, setSelectedSubMenu] = useState(null)
@@ -23,12 +23,23 @@ export default function Header() {
       subMenu: ["Essays", "Interviews", "Recordings", "Video", "Newsletter"]
     },
     {
-      item: "Support"
+      item: "Support",
+      link: "support"
     },
     {
-      item: "Contact"
+      item: "Contact",
+      link: "contact"
     }
   ]
+
+  const emojis = ["👶🏻", "👶🏽"]
+
+  const handleHomePageClick = () => {
+    setSelectedItem(null);
+    setSelectedSubMenu(null);
+    setSelectedSubItem(null);
+    setLooping(true);
+  }
 
   const handleMenuClick = (item) => {
     setSelectedItem(item)
@@ -40,23 +51,35 @@ export default function Header() {
     else {
       setSelectedSubMenu(null)
     }
+    if (item === "Support" || item === "Contact") {
+      setLooping(false);
+    }
   };
 
   const handleSubMenuClick = (item) => {
     setSelectedSubItem(item)
+    setLooping(false);
+  }
+
+  const createLink = (item) => {
+    return item.toLowerCase().trim().replace(/\s+/g, "-")
   }
 
   return (
     <header>
       <div className="header-top">
-        <div className="header-title">INTERSPECIES</div>
-        <div className="header-dates">(1970 - 2014)</div>
+        <div className="header-title" onClick={() => handleHomePageClick()}><Link to="/">Interspecies</Link></div>
+        {/* <div className="header-dates">(1970 - 2014)</div> */}
       </div>
       <div className="header-menu">
         {
           menuData.map((menu, index) => (
             <div key={index} className={`menu-section ${selectedItem === menu.item ? "active" : ""}`} onClick={() => handleMenuClick(menu.item)}>
-              {menu.item}
+              {menu.link ?
+                <Link to={`/${menu.link}`} className={selectedItem === menu.item ? "active" : "poop"}>{menu.item}</Link>
+                :
+                menu.item
+              }
             </div>
           ))
         }
@@ -64,13 +87,13 @@ export default function Header() {
       <div className={`header-submenu ${selectedSubMenu ? "active" : ""}`}>
         {selectedSubMenu ? (
           selectedSubMenu.map((subItem, index) => (
-            <div key={index} className={`submenu-section ${selectedSubItem === subItem ? "active" : "collapsed"}`} onClick={() => handleSubMenuClick(subItem)}>
-              {subItem}
+            <div key={index} className={`submenu-section ${selectedSubItem === subItem ? "active" : ""}`} onClick={() => handleSubMenuClick(subItem)}>
+              <Link to={`/${createLink(subItem)}`} className={selectedSubItem === subItem ? "active" : ""}>{subItem}</Link>
             </div>
           ))
         ) : null
         }
       </div>
-    </header>
+    </header >
   );
 }

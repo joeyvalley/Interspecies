@@ -37,7 +37,138 @@ html {
 
 .container {
   position: relative;
-  width: 100dvw;
-  height: 100dvh;
-  padding: 1rem;
+  width: calc(100dvw - 2rem);
+  min-height: calc(100dvh - 2rem);
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.video-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background: white;
+  z-index: -1;
+  transition: opacity 1s ease-in-out;
+}
+
+.video-container video {
+  position: absolute;
+  top: 1rem;
+  left: 0rem;
+  width: calc(100dvw - 2rem);
+  min-height: 100vh;
+  object-fit: cover;
+  opacity: 0.75;
+  background: white;
+}
+
+.looping {
+  opacity: 0;
+}
+
+.video-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.page-full {
+  position: relative;
+  background: none;
+  width: 100%;
+  min-height: calc(100dvh - 6rem);
+  padding: none;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.page-full.fade-in {
+  opacity: 1;
+}
+
+.page-full .left-column {
+  flex: 0 0 65%;
+  padding: 0.5;
+  background: white;
+}
+
+.page-full .right-column {
+  flex: 0 0 35%;
+  padding: 0.5;
+  background: white;
+  border-left: 1px solid black;
+  padding: 4rem 1rem;
+}
+
+.page-full .right-column h1 {
+  font-family: "Monument Grotesk";
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.page-full .right-column p {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  color: black;
+  display: block;
+}
+
+.page-full h1 {
+  font-family: "Monument Grotesk";
+  font-weight: normal;
+  font-size: 3rem;
+  color: black;
+  line-height: 1.25;
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+@keyframes background-pulse {
+  0% {
+    background: white;
+  }
+
+  50% {
+    background: antiquewhite;
+  }
+
+  100% {
+    background: white;
+  }
+
+}
+
+@keyframes image-pulse {
+  0% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+
+  100% {
+    opacity: 0.15;
+  }
 }

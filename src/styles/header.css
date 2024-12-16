@@ -1,9 +1,10 @@
 header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
-  width: 100dvw;
-  padding: 0.5rem 0 0.75rem;
+  width: 100%;
+  padding: 0.5rem 0 0rem;
+  background: white;
 }
 
 .header-top {
@@ -16,16 +17,22 @@ header {
 
 .header-title {
   font-family: "Monument Grotesk";
-  font-weight: normal;
+  font-weight: bold;
   font-size: 1rem;
-  color: black;
+  color: blue;
   cursor: pointer;
+}
+
+.header-title a {
+  text-decoration: none;
+  color: blue;
+  font-size: 1rem;
 }
 
 .header-dates {
   font-family: "Monument Grotesk";
   font-style: italic;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: black;
 }
 
@@ -48,6 +55,20 @@ header {
   transition: all 0.3s ease-in;
 }
 
+.menu-section a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease-in;
+}
+
+.menu-section a:hover {
+  color: white;
+}
+
+.menu-section a.active {
+  color: white;
+}
+
 .menu-section:last-child {
   margin-right: 0;
 }
@@ -58,7 +79,7 @@ header {
 }
 
 .menu-section.active {
-  color: white;
+  color: white !important;
   background: black;
 }
 
@@ -97,10 +118,24 @@ header {
 
 .submenu-section:hover {
   color: white;
-  background: green;
+  background: black;
 }
 
 .submenu-section.active {
   color: white;
-  background: green;
+  background: black;
+}
+
+.submenu-section a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease-in;
+}
+
+.submenu-section a:hover {
+  color: white;
+}
+
+.submenu-section a.active {
+  color: white;
 }
