@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Support() {
+export default function Research() {
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -14,7 +14,7 @@ export default function Support() {
     <div className={`page-full ${isVisible ? "fade-in" : ""}`}>
       <div className="left-column"></div>
       <div className="right-column">
-        <h1>Support</h1>
+        <h1>Research</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, mollitia ut eaque quasi possimus alias similique atque deserunt quam quos illo commodi totam sint hic, corrupti distinctio. Laboriosam, ipsam doloremque.</p>
       </div>
     </div>

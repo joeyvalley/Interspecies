@@ -19,19 +19,20 @@ header {
   font-family: "Monument Grotesk";
   font-weight: bold;
   font-size: 1rem;
-  color: black;
+  color: blue;
   cursor: pointer;
 }
 
 .header-title a {
   text-decoration: none;
-  color: black;
+  color: blue;
+  font-size: 1rem;
 }
 
 .header-dates {
   font-family: "Monument Grotesk";
   font-style: italic;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: black;
 }
 

@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import '../styles/header.css';
 
 
-export default function Header() {
+export default function Header({ setLooping }) {
 
   const [selectedItem, setSelectedItem] = useState(null)
   const [selectedSubMenu, setSelectedSubMenu] = useState(null)
@@ -38,6 +38,7 @@ export default function Header() {
     setSelectedItem(null);
     setSelectedSubMenu(null);
     setSelectedSubItem(null);
+    setLooping(true);
   }
 
   const handleMenuClick = (item) => {
@@ -50,10 +51,14 @@ export default function Header() {
     else {
       setSelectedSubMenu(null)
     }
+    if (item === "Support" || item === "Contact") {
+      setLooping(false);
+    }
   };
 
   const handleSubMenuClick = (item) => {
     setSelectedSubItem(item)
+    setLooping(false);
   }
 
   const createLink = (item) => {
@@ -64,7 +69,7 @@ export default function Header() {
     <header>
       <div className="header-top">
         <div className="header-title" onClick={() => handleHomePageClick()}><Link to="/">Interspecies</Link></div>
-        <div className="header-dates">(1970 - 2014)</div>
+        {/* <div className="header-dates">(1970 - 2014)</div> */}
       </div>
       <div className="header-menu">
         {
