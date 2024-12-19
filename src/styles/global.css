@@ -16,6 +16,10 @@ html {
   font-size: 16px;
 }
 
+body {
+  background: rgb(255, 253, 250);
+}
+
 @font-face {
   font-family: "Monument Grotesk";
   src: url("../../public/fonts/ABCMonumentGrotesk-Regular-Trial.woff");
@@ -55,7 +59,7 @@ html {
   width: 100%;
   min-height: 100%;
   overflow: hidden;
-  background: white;
+  background: rgb(255, 253, 250);
   z-index: -1;
   transition: opacity 1s ease-in-out;
 }
@@ -68,7 +72,7 @@ html {
   min-height: 100vh;
   object-fit: cover;
   opacity: 0.75;
-  background: white;
+  background: rgb(255, 253, 250);
 }
 
 .looping {
@@ -102,17 +106,63 @@ html {
 
 .page-full .left-column {
   flex: 0 0 65%;
-  padding: 0.5;
-  background: white;
+  background: rgb(255, 253, 250);
+  padding: 1rem 1rem 4rem 0.75rem;
+  overflow: scroll;
+}
+
+.page-full .left-column h1 {
+  font-family: "Monument Grotesk";
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.page-full .left-column h2 {
+  font-family: "Monument Grotesk";
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: block;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.page-full .left-column h2 .subtitle {
+  font-family: "Monument Grotesk";
+  font-weight: normal;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+
+.page-full .left-column p {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  color: black;
+  display: block;
+  margin-bottom: 1rem;
+  text-align: justleftify;
+}
+
+.page-full .left-column p a {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  color: blue;
+  text-decoration: underline;
 }
 
 .page-full .right-column {
   flex: 0 0 35%;
-  background: white;
+  background: rgb(255, 253, 250);
   border-left: 1px solid black;
-  padding: 0;
+  padding-bottom: 4rem;
   position: relative;
   height: calc(100dvh - 4rem);
+  overflow: scroll;
 }
 
 .page-full .right-column .footer {
@@ -139,6 +189,19 @@ html {
   padding: 0.45rem 0;
   margin-bottom: 0.9rem;
   border-bottom: 1px solid black;
+  position: sticky;
+  top: 0;
+  background: white;
+}
+
+.page-full .right-column h2 {
+  font-family: "Monument Grotesk";
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: block;
+  text-align: left;
+  padding: 0 0.9rem 0 0.9rem;
 }
 
 .page-full .right-column p {
@@ -148,7 +211,22 @@ html {
   display: block;
   margin-bottom: 1rem;
   text-align: justify;
+  padding: 0 1.5rem 0 0.9rem;
+}
+
+.page-full .right-column ul {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
   padding: 0 0.9rem 0 0.9rem;
+  list-style-type: none;
+  margin-bottom: 0.5rem;
+}
+
+.page-full .right-column ul li {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  color: blue;
+  margin-bottom: 0.2rem;
 }
 
 .page-full .right-column p a {

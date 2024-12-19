@@ -67,7 +67,7 @@ export default function Header({ setLooping }) {
   const randomText = [
     {
       target: "firstLetter",
-      options: ["I", "𝐼", "ί", "ᓰ", "𝙸", "ᴵ", "ɪ", "𝓘", "ꪱׁׅ"]
+      options: ["I", "𝐼", "ί", "ᓰ", "𝙸", "ᴵ", "ɪ", "𝓘"]
     }, {
       target: "secondLetter",
       options: ["n", "𝐧", "𝑛", "𝒏", "𝓃", "𝓷", "𝔫", "𝕟", "𝗻", "𝘯", "𝙣", "𝚗", "ɴ"]
