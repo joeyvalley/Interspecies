@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 
-export default function Video() {
+export default function Video({ setSelectedItem, setSelectedSubMenu, setSelectedSubItem, menuData }) {
 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    setSelectedItem("Library");
+    const menuItem = menuData.find(menu => menu.item === "Library");
+    setSelectedSubMenu(menuItem.subMenu);
+    setSelectedSubItem("Video");
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
   }, []);

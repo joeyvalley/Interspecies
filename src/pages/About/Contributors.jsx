@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 
-export default function Contributors() {
+export default function Contributors({ setSelectedItem, setSelectedSubMenu, setSelectedSubItem, menuData }) {
 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    setSelectedItem("About");
+    const menuItem = menuData.find(menu => menu.item === "About");
+    setSelectedSubMenu(menuItem.subMenu);
+    setSelectedSubItem("Contributors");
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
   }, []);

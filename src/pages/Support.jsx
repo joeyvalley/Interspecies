@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 
-export default function Support() {
+export default function Support({ setSelectedItem, setSelectedSubMenu, menuData }) {
 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    setSelectedItem("Support");
+    const menuItem = menuData.find(menu => menu.item === "Support");
+    setSelectedSubMenu(menuItem.subMenu);
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
   }, []);

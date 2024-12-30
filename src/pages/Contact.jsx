@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
 
-export default function Contact() {
+export default function Contact({ setSelectedItem, setSelectedSubMenu, menuData }) {
 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    setSelectedItem("Contact");
+    const menuItem = menuData.find(menu => menu.item === "Contact");
+    setSelectedSubMenu(menuItem.subMenu);
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
   }, []);
+
 
 
   return (

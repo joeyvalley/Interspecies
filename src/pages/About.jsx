@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
 
-export default function Essays({ setSelectedItem, setSelectedSubMenu, setSelectedSubItem, menuData }) {
+export default function About({ setSelectedItem, setSelectedSubMenu, menuData }) {
 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setSelectedItem("Library");
-    const menuItem = menuData.find(menu => menu.item === "Library");
+    setSelectedItem("About");
+    const menuItem = menuData.find(menu => menu.item === "About");
     setSelectedSubMenu(menuItem.subMenu);
-    setSelectedSubItem("Essays");
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
   }, []);
@@ -18,7 +17,7 @@ export default function Essays({ setSelectedItem, setSelectedSubMenu, setSelecte
     <div className={`page-full ${isVisible ? "fade-in" : ""}`}>
       <div className="left-column"></div>
       <div className="right-column">
-        <h1>Essays</h1>
+        <h1>About Interspecies</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, mollitia ut eaque quasi possimus alias similique atque deserunt quam quos illo commodi totam sint hic, corrupti distinctio. Laboriosam, ipsam doloremque.</p>
       </div>
     </div>
