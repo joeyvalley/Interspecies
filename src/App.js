@@ -33,31 +33,79 @@ function App() {
 
   const [looping, setLooping] = useState(true);
 
+  const [selectedItem, setSelectedItem] = useState(null) // Tells us which menu item is selected, if any
+  const [selectedSubMenu, setSelectedSubMenu] = useState(null) // Tells us if the selected menu item has a submenu
+  const [selectedSubItem, setSelectedSubItem] = useState(null) // Tells us which submenu item is selected, if any
+
+
+  const menuData = [
+    {
+      item: "About",
+      link: "about",
+      subMenu: ["History", "Communication Theory", "Contributors"]
+    },
+    {
+      item: "Programs",
+      link: "programs",
+      subMenu: ["Research", "Field Work", "Art Projects"]
+    },
+    {
+      item: "Library",
+      link: "library",
+      subMenu: ["Essays", "Interviews", "Recordings", "Video", "Newsletter"]
+    },
+    {
+      item: "Support",
+      link: "support"
+    },
+    {
+      item: "Contact",
+      link: "contact"
+    }
+  ]
+
+  const setSelectedMenuItem = (value) => {
+    console.log("Setting selected menu item to: ", value);
+    setSelectedItem(value);
+  }
+
+  const doesSelectedItemHaveSubMenu = (value) => {
+    console.log("Does selected menu item have a submenu?", value);
+    setSelectedSubMenu(value);
+  }
+
+  const setSelectedSubMenuItem = (value) => {
+    console.log("Setting selected submenu item to:", value);
+    setSelectedSubItem(value);
+  }
+
   const toggleVideo = (value) => {
     setLooping(value);
   };
 
+
+
   return (
     <div className="container">
-      <Header setLooping={toggleVideo} />
+      <Header setLooping={toggleVideo} selectedItem={selectedItem} selectedSubMenu={selectedSubMenu} selectedSubItem={selectedSubItem} setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} setSelectedSubItem={setSelectedSubMenuItem} menuData={menuData} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/communication-theory" element={<Theory />} />
-        <Route path="/contributors" element={<Contributors />} />
-        <Route path="/programs" element={<Programs />} />
-        <Route path="/research" element={<Research />} />
-        <Route path="/field-work" element={<Field />} />
-        <Route path="/art-projects" element={<Art />} />
-        <Route path="/library" element={<Library />} />
-        <Route path="/essays" element={<Essays />} />
-        <Route path="/interviews" element={<Interviews />} />
-        <Route path="/recordings" element={<Recordings />} />
-        <Route path="/video" element={<Video />} />
-        <Route path="/newsletter" element={<Newsletter />} />
-        <Route path="/support" element={<Support />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} menuData={menuData} />} />
+        <Route path="/history" element={<History setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} setSelectedSubItem={setSelectedSubMenuItem} menuData={menuData} />} />
+        <Route path="/communication-theory" element={<Theory setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} setSelectedSubItem={setSelectedSubMenuItem} menuData={menuData} />} />
+        <Route path="/contributors" element={<Contributors setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} setSelectedSubItem={setSelectedSubMenuItem} menuData={menuData} />} />
+        <Route path="/programs" element={<Programs setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} menuData={menuData} />} />
+        <Route path="/research" element={<Research setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} setSelectedSubItem={setSelectedSubMenuItem} menuData={menuData} />} />
+        <Route path="/field-work" element={<Field setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} setSelectedSubItem={setSelectedSubMenuItem} menuData={menuData} />} />
+        <Route path="/art-projects" element={<Art setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} setSelectedSubItem={setSelectedSubMenuItem} menuData={menuData} />} />
+        <Route path="/library" element={<Library setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} menuData={menuData} />} />
+        <Route path="/essays" element={<Essays setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} setSelectedSubItem={setSelectedSubMenuItem} menuData={menuData} />} />
+        <Route path="/interviews" element={<Interviews setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} setSelectedSubItem={setSelectedSubMenuItem} menuData={menuData} />} />
+        <Route path="/recordings" element={<Recordings setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} setSelectedSubItem={setSelectedSubMenuItem} menuData={menuData} />} />
+        <Route path="/video" element={<Video setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} setSelectedSubItem={setSelectedSubMenuItem} menuData={menuData} />} />
+        <Route path="/newsletter" element={<Newsletter setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} setSelectedSubItem={setSelectedSubMenuItem} menuData={menuData} />} />
+        <Route path="/support" element={<Support setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} menuData={menuData} />} />
+        <Route path="/contact" element={<Contact setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} menuData={menuData} />} />
       </Routes>
       <VideoBackground looping={looping} />
     </div>

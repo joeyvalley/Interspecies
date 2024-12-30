@@ -3,12 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 import '../styles/header.css';
 
 
-export default function Header({ setLooping }) {
+export default function Header({ setLooping, selectedItem, selectedSubMenu, selectedSubItem, setSelectedItem, setSelectedSubMenu, setSelectedSubItem, menuData }) {
 
-  const [selectedItem, setSelectedItem] = useState(null)
-  const [selectedSubMenu, setSelectedSubMenu] = useState(null)
-  const [selectedSubItem, setSelectedSubItem] = useState(null)
 
+  // Animate the header text
   const [firstLetter, setFirstLetter] = useState("I");
   const [secondLetter, setSecondLetter] = useState("n");
   const [thirdLetter, setThirdLetter] = useState("t");
@@ -35,34 +33,6 @@ export default function Header({ setLooping }) {
     setEleventhLetter,
     setTwelfthLetter,
   ];
-
-  const [delayTime, setDelayTime] = useState(10000);
-
-  const menuData = [
-    {
-      item: "About",
-      link: "about",
-      subMenu: ["History", "Communication Theory", "Contributors"]
-    },
-    {
-      item: "Programs",
-      link: "programs",
-      subMenu: ["Research", "Field Work", "Art Projects"]
-    },
-    {
-      item: "Library",
-      link: "library",
-      subMenu: ["Essays", "Interviews", "Recordings", "Video", "Newsletter"]
-    },
-    {
-      item: "Support",
-      link: "support"
-    },
-    {
-      item: "Contact",
-      link: "contact"
-    }
-  ]
 
   const randomText = [
     {
@@ -103,6 +73,7 @@ export default function Header({ setLooping }) {
       options: ["s", "𝐬", "𝑠", "𝒔", "𝓈", "𝓼", "𝔰", "𝕤", "𝖘", "𝗌", "𝘀", "𝘴", "𝚜"]
     }
   ]
+
   // const randomEmoji = [
   //   {
   //     options: ["👶🏻", "🧒🏾", "👦🏼", "👧🏿", "🧑🏻", "👱🏽", "👨🏾", "🧔🏾", "👨🏿‍🦱", "👨🏻‍🦲", "👩🏼", "🧑🏻‍🦰", "👩🏾‍🦱", "👩🏻‍🦳", "👱🏽‍♀️", "👵🏿", "🧓🏾", "🧕🏽", "👳🏾‍♂️", "👳🏿‍♀️", "👳🏽‍♀️", "👁️"]
@@ -111,6 +82,8 @@ export default function Header({ setLooping }) {
   //     options: ["🦧", "🫏", "🦓", "🐏", "🐫", "🦒", "🐀", "🦔", "🦨", "🦡", "🦃", "🦆", "🦢", "🦤", "🦚", "🦜", "🦎", "🐋", "🐬", "🦭", "🐡", "🦈", "🪸", "🪼", "🐌", "🦋", "🪲", "🦗", "🦟", "🪱", "🍄", "🌳", "🌲", "🌴"]
   //   }
   // ]
+
+  const [delayTime, setDelayTime] = useState(10000);
 
   const handleHomePageClick = () => {
     setSelectedItem(null);

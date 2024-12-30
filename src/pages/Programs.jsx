@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 
-export default function Programs() {
+export default function Programs({ setSelectedItem, setSelectedSubMenu, menuData }) {
 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    setSelectedItem("Programs");
+    const menuItem = menuData.find(menu => menu.item === "Programs");
+    setSelectedSubMenu(menuItem.subMenu);
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
   }, []);

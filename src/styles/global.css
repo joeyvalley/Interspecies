@@ -183,6 +183,7 @@ body {
   font-family: "Monument Grotesk";
   font-weight: bold;
   font-size: 0.9rem;
+  color: white;
   cursor: pointer;
   display: block;
   text-align: center;
@@ -191,7 +192,7 @@ body {
   border-bottom: 1px solid black;
   position: sticky;
   top: 0;
-  background: white;
+  background: black;
 }
 
 .page-full .right-column h2 {

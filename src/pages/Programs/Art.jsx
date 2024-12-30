@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 
-export default function Art() {
+export default function Art({ setSelectedItem, setSelectedSubMenu, setSelectedSubItem, menuData }) {
 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    setSelectedItem("Programs");
+    const menuItem = menuData.find(menu => menu.item === "Programs");
+    setSelectedSubMenu(menuItem.subMenu);
+    setSelectedSubItem("Art Projects");
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
   }, []);
