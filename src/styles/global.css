@@ -145,7 +145,14 @@ body {
   color: black;
   display: block;
   margin-bottom: 1rem;
-  text-align: justleftify;
+  text-align: left;
+}
+
+.page-full .left-column p .italics{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: black;
 }
 
 .page-full .left-column p a {
@@ -199,7 +206,6 @@ body {
   font-family: "Monument Grotesk";
   font-weight: bold;
   font-size: 0.9rem;
-  cursor: pointer;
   display: block;
   text-align: left;
   padding: 0 0.9rem 0 0.9rem;
@@ -227,7 +233,12 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.9rem;
   color: blue;
+  cursor: pointer;
   margin-bottom: 0.2rem;
+}
+
+.page-full .right-column ul li:hover {
+  text-decoration: underline;
 }
 
 .page-full .right-column p a {
