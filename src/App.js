@@ -25,7 +25,7 @@ import Research from './pages/Programs/Research';
 
 
 import Header from './components/Header';
-import VideoBackground from './components/VideoBackground';
+// import VideoBackground from './components/VideoBackground';
 
 import './styles/global.css';
 
@@ -107,7 +107,7 @@ function App() {
         <Route path="/support" element={<Support setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} menuData={menuData} />} />
         <Route path="/contact" element={<Contact setSelectedItem={setSelectedMenuItem} setSelectedSubMenu={doesSelectedItemHaveSubMenu} menuData={menuData} />} />
       </Routes>
-      <VideoBackground looping={looping} />
+      {/* <VideoBackground looping={looping} /> */}
     </div>
   );
 }
