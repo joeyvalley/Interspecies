@@ -16,6 +16,7 @@ export default function Newsletter({ setSelectedItem, setSelectedSubMenu, setSel
   }, []);
 
   async function handleSelection(id){
+    console.log("handleSelection", id);
     const data = await getNewsletterEntry(id);
     setNewsletterData(data);
   }
@@ -44,48 +45,47 @@ export default function Newsletter({ setSelectedItem, setSelectedSubMenu, setSel
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, mollitia ut eaque quasi possimus alias similique atque deserunt quam quos illo commodi totam sint hic, corrupti distinctio. Laboriosam, ipsam doloremque.</p>
         <h2>2005</h2>
         <ul>
-          <li onClick={() => handleSelection("677d79d53d0b7942668bfbcd")}>April</li>
-          <li onClick={() => handleSelection("677d79d53d0b7942668bfbd2")}>May</li>
-          <li>June</li>
-          <li>July</li>
-          <li>August</li>
-          <li>September</li>
-          <li>October</li>
-          <li>November</li>
-          <li>December</li>
+          <li onClick={() => handleSelection("677ed60141d949c8b1e7c4bf")}>April</li>
+          <li onClick={() => handleSelection("677ed60141d949c8b1e7c4c4")}>May</li>
+          <li onClick={() => handleSelection("677ed60141d949c8b1e7c4ca")}>June</li>
+          <li onClick={() => handleSelection("677ed60141d949c8b1e7c4cf")}>July</li>
+          <li onClick={() => handleSelection("677ed60141d949c8b1e7c512")}>August</li>
+          <li onClick={() => handleSelection("677ed60141d949c8b1e7c51d")}>September</li>
+          <li onClick={() => handleSelection("677ed60141d949c8b1e7c527")}>October</li>
         </ul>
         <h2>2006</h2>
         <ul>
-          <li>January</li>
-          <li>February</li>
-          <li>March</li>
-          <li>April</li>
-          <li>May</li>
-          <li>June</li>
-          <li>July</li>
-          <li>September</li>
-          <li>October</li>
-          <li>November</li>
-          <li>December</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c4d4")}>January</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c4e3")}>March</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c4e9")}>April</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c4f3")}>May</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c4f7")}>June</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c521")}>September</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c52c")}>October</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c533")}>November</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c538")}>December</li>
+        
         </ul>
         <h2>2007</h2>
         <ul>
-          <li>October</li>
-          <li>December</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c50b")}>September</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c53d")}>December</li>
         </ul>
+   
         <h2>2008</h2>
         <ul>
-          <li>January</li>
-          <li>April</li>
-          <li>June</li>
-          <li>October</li>
-          <li>December</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c4d8")}>January</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c504")}>April/May</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c4fc")}>June</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c518")}>October</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c544")}>November</li>
         </ul>
         <h2>2009</h2>
         <ul>
-          <li>February</li>
-          <li>April</li>
-          <li>June</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c4de")}>February/March</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c4ef")}>April</li>
+        <li onClick={() => handleSelection("677ed60141d949c8b1e7c500")}>August</li>
+        
         </ul>
       </div>
     </div>
