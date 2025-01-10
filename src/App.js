@@ -65,17 +65,14 @@ function App() {
   ]
 
   const setSelectedMenuItem = (value) => {
-    console.log("Setting selected menu item to: ", value);
     setSelectedItem(value);
   }
 
   const doesSelectedItemHaveSubMenu = (value) => {
-    console.log("Does selected menu item have a submenu?", value);
     setSelectedSubMenu(value);
   }
 
   const setSelectedSubMenuItem = (value) => {
-    console.log("Setting selected submenu item to:", value);
     setSelectedSubItem(value);
   }
 
