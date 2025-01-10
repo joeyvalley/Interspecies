@@ -16,7 +16,6 @@ export default function Newsletter({ setSelectedItem, setSelectedSubMenu, setSel
   }, []);
 
   async function handleSelection(id){
-    console.log("handleSelection", id);
     const data = await getNewsletterEntry(id);
     setNewsletterData(data);
   }
