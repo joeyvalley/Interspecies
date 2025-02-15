@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getAllEssays, getEssay } from "../../api/getEssay";
+import { getAllEssays } from "../../api/getEssay";
 
 
 export default function Essays({ setSelectedItem, setSelectedSubMenu, setSelectedSubItem, menuData }) {
